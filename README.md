@@ -6,6 +6,7 @@ We all know how bad the university’s “Course Registration System” is, so w
 The communication between the server and the client(s) is performed using a binary communication protocol.
 
 The implementation of the server is based on the Thread-Per-Client (TPC) and Reactor servers.
+___________________________________________________________________________________________
 
 The messages in this protocol are binary numbers, composed of an opcode (short number of two bytes) which indicates the command,
 and the data needed for this command (in various lengths).
@@ -41,23 +42,19 @@ Opcode | Operation
 13 Error (ERR)
 
 
- 
 
-Unlike real course registration systems, the courses are specified in one file, according to a specific format (shown below). The data which the server and clients get during their running are saved in the RAM (in data structures, e.g., arrays, lists, etc…)
+___________________________________________________________________________________________
 
 
-Establishing a client/server connection:
-Upon connecting, a client must identify himself to the service.
-A new client will issue a Register command with the requested user name and password.
-A registered client can then login using the Login command. Once the command is sent,
-the server will acknowledge the validity of the username and password.
-Once a user is logged in successfully, she can submit other commands.
-The register and login commands are stated in the following section.
-Note that the register command will not perform automatic login (you will need to call login after it).
+Unlike real course registration systems, the courses are specified in one file, according to a specific format (shown below).
+The data which the server and clients get during their running are saved in the RAM (in data structures)
 
-1.2 Courses File
+Courses File:
 
-The data about the courses (for the server use) are given by a text file which you will define beforehand. The file name MUST be Courses.txt, and it should be located in the main folder (the project folder). The file consists of lines, where every line refers to a specific course. The format of a single line will be as follows:
+The data about the courses (for the server use) are given by a text file which is defined beforehand.
+The file name is Courses.txt, and it should be located in the main folder (the project folder).
+The file consists of lines, where every line refers to a specific course.
+The format of a single line is as follows:
 
 courseNum|courseName|KdamCoursesList|numOfMaxStudents
 
@@ -72,3 +69,14 @@ numOfMaxStudents: the maximum number of students allowed to register to this cou
 Example:
 
 42|How to Train Your Dragon|[43,2,32,39]|25
+
+___________________________________________________________________________________________
+
+Establishing a client/server connection:
+Upon connecting, a client must identify himself to the service.
+A new client will issue a Register command with the requested user name and password.
+A registered client can then login using the Login command. Once the command is sent,
+the server will acknowledge the validity of the username and password.
+Once a user is logged in successfully, he can submit other commands.
+
+
