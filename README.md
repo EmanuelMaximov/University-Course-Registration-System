@@ -1,5 +1,5 @@
-General Description:
-
+#University Course Registration System
+##General Description
 
 We all know how bad the university’s “Course Registration System” is, so we implemented a simple “Course Registration System” server and client.
 
@@ -7,11 +7,12 @@ The communication between the server and the client(s) is performed using a bina
 
 The implementation of the server is based on the Thread-Per-Client (TPC) and Reactor servers.
 ___________________________________________________________________________________________
+##Commands
 
 The messages in this protocol are binary numbers, composed of an opcode (short number of two bytes) which indicates the command,
 and the data needed for this command (in various lengths).
 
-The commands supported by the protocol:
+###The commands supported by the protocol:
 
 Opcode | Operation
 
@@ -45,12 +46,11 @@ Opcode | Operation
 
 ___________________________________________________________________________________________
 
-
+##Courses File
 Unlike real course registration systems, the courses are specified in one file, according to a specific format (shown below).
 The data which the server and clients get during their running are saved in the RAM (in data structures)
 
-Courses File:
-
+###File Structure
 The data about the courses (for the server use) are given by a text file which is defined beforehand.
 The file name is Courses.txt, and it should be located in the main folder (the project folder).
 The file consists of lines, where every line refers to a specific course.
@@ -72,6 +72,7 @@ Example:
 
 ___________________________________________________________________________________________
 
+##Client Connection
 Establishing a client/server connection:
 Upon connecting, a client must identify himself to the service.
 A new client will issue a Register command with the requested user name and password.
