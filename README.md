@@ -14,6 +14,7 @@ The messages in this protocol are binary numbers, composed of an opcode (short n
 and the data needed for this command (in various lengths).
 
 ### The commands supported by the protocol:
+```
 
 Opcode | Operation
 
@@ -42,7 +43,7 @@ Opcode | Operation
 12 Acknowledgement (ACK)
 
 13 Error (ERR)
-
+```
 
 
 
