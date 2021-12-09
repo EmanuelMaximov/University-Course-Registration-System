@@ -71,7 +71,7 @@ Example:
 
 42|How to Train Your Dragon|[43,2,32,39]|25
 
-___________________________________________________________________________________________
+
 
 ## Client Connection
 Establishing a client/server connection:
